@@ -1510,7 +1510,7 @@ def evaluation_step():
             "Techno Exchange": "Actual vs Predicted Values",
             "Imperial Wealth Club": "Actual vs Forecasted Entries"
         }[theme]
-            fig = go.Figure()
+        fig = go.Figure()
         fig.add_trace(go.Scatter(x=y_test, y=y_test, mode='lines', name='Perfect Prediction', line=dict(color='#F8F8FF', dash='dash')))
         for mt, yp in y_preds.items():
             if mt != "K-Means Clustering":
