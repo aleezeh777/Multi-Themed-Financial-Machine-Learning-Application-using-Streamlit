@@ -966,7 +966,7 @@ def plot_config(fig, title, x_title, y_title, width=800, height=400):
                 trace.update(marker=dict(line=dict(color='#3a5a40', width=2)))
     else:
         # Financial Shinobi (default)
-    fig.update_layout(
+     fig.update_layout(
         title=dict(text=title, font=dict(size=20, family="'Anime Ace', 'Comic Neue', cursive", color="#FFF")),
         xaxis_title=dict(text=x_title, font=dict(size=16, family="'Anime Ace', 'Comic Neue', cursive", color="#FFF")),
         yaxis_title=dict(text=y_title, font=dict(size=16, family="'Anime Ace', 'Comic Neue', cursive", color="#FFF")),
