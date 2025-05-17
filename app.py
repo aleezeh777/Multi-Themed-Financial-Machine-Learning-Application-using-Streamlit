@@ -966,20 +966,20 @@ def plot_config(fig, title, x_title, y_title, width=800, height=400):
                 trace.update(marker=dict(line=dict(color='#3a5a40', width=2)))
     else:
         # Financial Shinobi (default)
-     fig.update_layout(
-        title=dict(text=title, font=dict(size=20, family="'Anime Ace', 'Comic Neue', cursive", color="#FFF")),
-        xaxis_title=dict(text=x_title, font=dict(size=16, family="'Anime Ace', 'Comic Neue', cursive", color="#FFF")),
-        yaxis_title=dict(text=y_title, font=dict(size=16, family="'Anime Ace', 'Comic Neue', cursive", color="#FFF")),
-        width=width, height=height, template='plotly_dark',
-        font_color='#FFF', plot_bgcolor='#181c24', paper_bgcolor='#23293a',
-        showlegend=True, legend=dict(font=dict(size=14, family="'Anime Ace', 'Comic Neue', cursive", color="#39FF14"), x=0.01, y=0.99),
-        hovermode='closest', margin=dict(l=50, r=50, t=50, b=50)
-    )
-    fig.update_xaxes(showgrid=True, gridcolor='rgba(138,43,226,0.3)', zeroline=False, color='#FFF')
-    fig.update_yaxes(showgrid=True, gridcolor='rgba(138,43,226,0.3)', color='#FFF')
-    for trace in fig.data:
-        if trace.type in ['scatter', 'bar', 'scattergl', 'scatter3d', 'scatterpolar', 'scattergeo', 'scattermapbox']:
-            trace.update(marker=dict(line=dict(color='#39FF14', width=2)))
+        fig.update_layout(
+            title=dict(text=title, font=dict(size=20, family="'Anime Ace', 'Comic Neue', cursive", color="#FFF")),
+            xaxis_title=dict(text=x_title, font=dict(size=16, family="'Anime Ace', 'Comic Neue', cursive", color="#FFF")),
+            yaxis_title=dict(text=y_title, font=dict(size=16, family="'Anime Ace', 'Comic Neue', cursive", color="#FFF")),
+            width=width, height=height, template='plotly_dark',
+            font_color='#FFF', plot_bgcolor='#181c24', paper_bgcolor='#23293a',
+            showlegend=True, legend=dict(font=dict(size=14, family="'Anime Ace', 'Comic Neue', cursive", color="#39FF14"), x=0.01, y=0.99),
+            hovermode='closest', margin=dict(l=50, r=50, t=50, b=50)
+        )
+        fig.update_xaxes(showgrid=True, gridcolor='rgba(138,43,226,0.3)', zeroline=False, color='#FFF')
+        fig.update_yaxes(showgrid=True, gridcolor='rgba(138,43,226,0.3)', color='#FFF')
+        for trace in fig.data:
+            if trace.type in ['scatter', 'bar', 'scattergl', 'scatter3d', 'scatterpolar', 'scattergeo', 'scattermapbox']:
+                trace.update(marker=dict(line=dict(color='#39FF14', width=2)))
 
 # Pipeline steps
 def welcome_step():
@@ -1564,7 +1564,7 @@ def evaluation_step():
                 st.markdown(f"<div class=\"interpretation\">{interp}</div>", unsafe_allow_html=True)
         # ... (continue this pattern for all graphs and interpretation blocks in this step) ...
         if st.button(next_btn, key="evaluation_next"):
-        st.session_state.pipeline['model_evaluated'] = True
+            st.session_state.pipeline['model_evaluated'] = True
             st.session_state.pipeline['current_step'] = 7
             st.rerun()
     except Exception as e:
@@ -1597,7 +1597,7 @@ def results_visualization_step():
         "Techno Exchange": "Final Model Comparison",
         "Imperial Wealth Club": "Ledger Forecast Comparison"
     }[theme]
-        fig = go.Figure()
+    fig = go.Figure()
     fig.add_trace(go.Scatter(x=y_test, y=y_test, mode='lines', name={
         "Financial Shinobi": "Sacred Seal",
         "Techno Exchange": "Perfect Prediction",
